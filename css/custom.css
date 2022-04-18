@@ -1,0 +1,38 @@
+h1, h2 {
+    text-align: center;
+    color: whitesmoke;
+}
+.error {
+    background-color: red;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    max-width: 400px;
+    margin: 0 auto;
+    color: white;
+}
+
+#contenido {
+    margin-top: 40px;
+}
+
+#lista-tweets{
+    color: whitesmoke;
+}
+
+.borrar-tweet,
+.borrar-tweet:hover {
+    float: right;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+body{
+    background-color: rgb(27, 18, 85);
+} 
+
+#tarea{
+    color: whitesmoke;
+}
