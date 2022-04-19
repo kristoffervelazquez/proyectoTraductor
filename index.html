@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Traductor</title>
     <link rel="stylesheet" href="css/tailwind.min.css">
-    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/custom.css">
 </head>
@@ -19,11 +19,12 @@
             <h1>TRADUCTOR</h1>
             <div class="row">
                 <div class="six columns">
-                    <h2>Inserta texto:</h2>
+                    <h2>Inserte texto:</h2>
                     <form id="formularios">
                         <div class="mb-3 xl:w-96">
-                            <p style="float: left; width: 50%; font-size: 16px;" class="text-white font-bold">Idioma del texto:</p>
-                            <select style="float: right; width: 50%; margin-left: auto;" id="idioma1" name="idioma">
+                            <p style="float: left; font-size: 16px; margin-right: 5%" class="text-white font-bold">
+                                Idioma del texto:</p>
+                            <select id="idioma1" name="idioma">
                                 <option value="" disabled selected>Elige tu idioma</option>
                                 <option value="en"> English </option>
                                 <option value="es"> Spanish </option>
@@ -36,19 +37,26 @@
                                 <option value="zh-Hant">Chinese (Traditional) </option>
                                 <option value="nl"> Dutch </option>
                                 <option value="ru"> Russian </option>
-                                <option value="pt"> Portuguese </option>                                
-                            </select>                                                        
+                                <option value="pt"> Portuguese </option>
+                            </select>
                         </div>
                         <textarea placeholder="Hola, hello, ciao..." id="texto1" class="u-full-width"></textarea>
-                        <input type="button" id="detectar" style="float: left; width: 40%" class="button button-primary" value="DETECTAR IDIOMA">
-                        <input type="submit" style="float: right; width: 30%" class="button button-primary" value="TRADUCIR">
+                        <div class ="botones">
+                            <input type="button" id="microfono"  class="button button-primary"
+                                value="Mic">
+                            <input type="button" id="detectar"  class="button button-primary"
+                                value="DETECTAR">
+                            <input type="submit" id="traducir-btn" style=" background-color: green; color: white;"
+                                class="button button-primary" value="TRADUCIR">
+                        </div>
                     </form>
                 </div>
                 <div class="six columns">
-                    <h2>Traducción</h2>
+                    <h2> Resultado </h2>
                     <div class="mb-3 xl:w-96">
-                        <p style="float: left; width: 50%; font-size: 16px;" class="text-white font-bold">Idioma a traducir:</p>
-                        <select style="float: right; width: 50%; margin-left: auto;" id="idioma2" name="idioma">
+                        <p style="float: left; font-size: 16px; margin-right: 5%" class="text-white font-bold">Idioma
+                            del texto:</p>
+                        <select id="idioma2" name="idioma">
                             <option value="" disabled selected>Elige tu idioma</option>
                             <option value="en"> English </option>
                             <option value="es"> Spanish </option>
@@ -57,18 +65,29 @@
                             <option value="fr"> French </option>
                             <option value="ja"> Japanese </option>
                             <option value="af"> Afrikaans </option>
-                            <option value="zh-Hans">Chinese (Simplified)</option>
-                            <option value="zh-Hant">Chinese (Traditional)</option>
-                            <option value="nl">Dutch</option>
-                            <option value="ru">Russian</option>
-                            <option value="pt">Portuguese</option>                                
-                        </select>                        
+                            <option value="zh-Hans">Chinese (Simplified) </option>
+                            <option value="zh-Hant">Chinese (Traditional) </option>
+                            <option value="nl"> Dutch </option>
+                            <option value="ru"> Russian </option>
+                            <option value="pt"> Portuguese </option>
+                        </select>
                     </div>
                     <div id="traduccion">
                         <textarea placeholder="Traducción" id="texto2" class="u-full-width" disabled="true"></textarea>
-                        <input type="button" style="float: right; width: 30%; margin-left: auto;" class="button button-primary" value="Escuchar">
+                        <button type="button" class="button button-primary" style="float:right; " value="" id="escuchar" ><svg
+                                class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z">
+                                </path>
+                            </svg></button>
+
                     </div>
                 </div>
+            </div>
+            <div class="resultados">
+                <div class="alertas"></div>
+                <h2>DEFINICIONES</h2>
             </div>
 
         </div>
@@ -76,6 +95,9 @@
     <!--#contenido-->
 
     <script src="js/app.js"></script>
+    <script src="js/reconocimientoDeVoz.js"></script>
+    <script src="js/text2speech.js"></script>
+
 </body>
 
 </html>

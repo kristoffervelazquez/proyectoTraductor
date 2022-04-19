@@ -118,10 +118,6 @@ function llenarTextoDos(resultado){
     
     // Se llena el texto obtenido de la api en el text area
     textoDos.value = text;
-    console.log(text);
 
 }
-
-
-
 

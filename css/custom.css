@@ -1,7 +1,9 @@
-h1, h2 {
+h1,
+h2 {
     text-align: center;
     color: whitesmoke;
 }
+
 .error {
     background-color: red;
     text-align: center;
@@ -17,7 +19,7 @@ h1, h2 {
     margin-top: 40px;
 }
 
-#lista-tweets{
+#lista-tweets {
     color: whitesmoke;
 }
 
@@ -29,10 +31,20 @@ h1, h2 {
     font-weight: bold;
 }
 
-body{
+body {
     background-color: rgb(27, 18, 85);
-} 
+}
 
-#tarea{
+#tarea {
     color: whitesmoke;
+}
+
+.botones {
+    padding: 0px;
+    width:fit-content
+}
+
+.alertas{
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
